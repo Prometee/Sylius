@@ -52,6 +52,19 @@
                 </attribute>
             </itemOperation>
 
+            <itemOperation name="shop_pay">
+                <attribute name="path">/shop/payments/{id}/pay</attribute>
+                <attribute name="method">PUT</attribute>
+                <attribute name="messenger">input</attribute>
+                <attribute name="input">Sylius\Bundle\ApiBundle\Command\Payment\PayPayment</attribute>
+                <attribute name="denormalization_context">
+                    <attribute name="groups">shop:payment:update</attribute>
+                </attribute>
+                <attribute name="normalization_context">
+                    <attribute name="groups">shop:payment:read</attribute>
+                </attribute>
+            </itemOperation>
+
             <itemOperation name="admin_complete">
                 <attribute name="method">PATCH</attribute>
                 <attribute name="input">false</attribute>
